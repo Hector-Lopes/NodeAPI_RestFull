@@ -14,7 +14,7 @@ GET http://localhost:3333/products
 GET http://localhost:3333/products/4c690378-a084-4e5b-a8fd-b6dc5fa083e1
 
 ### Passar ID depois da /
-PUT  http://localhost:3333/products/4c690378-a084-4e5b-a8fd-b6dc5fa083e1
+PUT  http://localhost:3333/products/97fbabe5-4823-4dea-bb14-7999e6350e99
 content-type: application/json
 
 {

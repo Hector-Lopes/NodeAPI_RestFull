@@ -36,13 +36,7 @@ app.post("/products", (request, response) => {
 
   produtos.push(product);
 
-  fs.writeFile("produtos.json", JSON.stringify(produtos), (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Inserido com sucesso");
-    }
-  });
+  create_file_produtos();
 
   return response.json(product);
 });
@@ -68,6 +62,8 @@ app.put("/products/:id", (request, response) => {
     price,
   };
 
+  create_file_produtos();
+
   return response.json({ message: "Produto Alterado" });
 });
 
@@ -79,5 +75,15 @@ app.delete("/products/:id", (request, response) => {
 
   return response.json({ message: "Produto removido" });
 });
+
+create_file_produtos = () => {
+  fs.writeFile("produtos.json", JSON.stringify(produtos), (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Inserido com sucesso");
+    }
+  });
+};
 
 app.listen(3333, () => console.log("servidor rodando porta 3333"));
