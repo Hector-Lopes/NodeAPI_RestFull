@@ -36,7 +36,7 @@ app.post("/products", (request, response) => {
 
   produtos.push(product);
 
-  create_file_produtos();
+  render_product_file();
 
   return response.json(product);
 });
@@ -62,7 +62,7 @@ app.put("/products/:id", (request, response) => {
     price,
   };
 
-  create_file_produtos();
+  render_product_file();
 
   return response.json({ message: "Produto Alterado" });
 });
@@ -73,10 +73,12 @@ app.delete("/products/:id", (request, response) => {
 
   produtos.splice(product_findindex, 1);
 
+  render_product_file();
+
   return response.json({ message: "Produto removido" });
 });
 
-create_file_produtos = () => {
+render_product_file = () => {
   fs.writeFile("produtos.json", JSON.stringify(produtos), (err) => {
     if (err) {
       console.log(err);

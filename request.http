@@ -2,7 +2,7 @@ POST http://localhost:3333/products
 content-type: application/json
 
 {
-    "name":"caneta azul",
+    "name":"caneta rosa",
     "price":7
 }
 
@@ -14,14 +14,14 @@ GET http://localhost:3333/products
 GET http://localhost:3333/products/4c690378-a084-4e5b-a8fd-b6dc5fa083e1
 
 ### Passar ID depois da /
-PUT  http://localhost:3333/products/97fbabe5-4823-4dea-bb14-7999e6350e99
+PUT  http://localhost:3333/products/a6780441-430a-4154-b309-089eadb3f570
 content-type: application/json
 
 {
-    "name":"caneta cor de arco iris",
+    "name":"canetgdfgdgda cor de arco verde",
     "price":7
 }
 
 ### Passar ID depois da /
 
-DELETE http://localhost:3333/4c690378-a084-4e5b-a8fd-b6dc5fa083e1       
+DELETE http://localhost:3333/products/a6780441-430a-4154-b309-089eadb3f570
