@@ -1,7 +1,6 @@
-const express = require("express");
-const { randomUUID } = require("crypto");
-const { request } = require("http");
-const fs = require("fs");
+import express from "express";
+import { randomUUID } from "crypto";
+import fs from "fs";
 
 const app = express();
 
@@ -72,8 +71,6 @@ app.delete("/products/:id", (request, response) => {
   const product_findindex = produtos.findIndex((product) => product.id === id);
 
   produtos.splice(product_findindex, 1);
-
-  render_product_file();
 
   return response.json({ message: "Produto removido" });
 });
