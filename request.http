@@ -2,8 +2,8 @@ POST http://localhost:3333/products
 content-type: application/json
  
 { 
-    "name":"caneta rosa",
-    "price":10
+    "name":"",
+    "price":
 }
 
 ###
@@ -11,17 +11,17 @@ GET http://localhost:3333/products
 
 ### Passar ID depois da /
 
-GET http://localhost:3333/products/4c690378-a084-4e5b-a8fd-b6dc5fa083e1
+GET http://localhost:3333/products/
 
 ### Passar ID depois da /
-PUT  http://localhost:3333/products/9
+PUT  http://localhost:3333/products/
 content-type: application/json
 
 {
-    "name":"arco",
-    "price":7
+    "name":"",
+    "price":
 }
 
 ### Passar ID depois da /
 
-DELETE http://localhost:3333/products/7
+DELETE http://localhost:3333/products/
