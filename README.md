@@ -27,28 +27,29 @@ content-type: application/json
  
 { 
     "name":"",
-    "price":""
+    "price":
 }
 
 ###
 GET http://localhost:3333/products
 
-### Use ID after /
+### Passar ID depois da /
 
-GET http://localhost:3333/products/4c690378-a084-4e5b-a8fd-b6dc5fa083e1
+GET http://localhost:3333/products/
 
-### Use ID after /
-PUT  http://localhost:3333/products/9
+### Passar ID depois da /
+PUT  http://localhost:3333/products/
 
 content-type: application/json
 
 {
     "name":"",
-    "price":""
+    "price":
 }
 
-### Use ID after /
+### Passar ID depois da /
 
-DELETE http://localhost:3333/products/7
+DELETE http://localhost:3333/products/
+
 ```
 
