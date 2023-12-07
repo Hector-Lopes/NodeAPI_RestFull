@@ -6,7 +6,6 @@ const Select_Products = async () => {
 
     `.then((e) => {
     console.log(e);
-    console.log("Selecionado");
   });
   return sql;
 };
