@@ -1,13 +1,12 @@
 import { sql } from "../database/db.js";
 
 const Select_Products = async () => {
-  sql`
+  const result = await sql`
   select * from products
 
-    `.then((e) => {
-    console.log(e);
-  });
-  return sql;
+    `;
+  console.log(result);
+  return result;
 };
 
 // async function Select_Products() {
