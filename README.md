@@ -1,6 +1,8 @@
 # NodeAPI_RestFull
 
 ![image](https://github.com/Hector-Lopes/NodeAPI_RestFull/assets/83184681/26ff09e2-831e-4301-8757-b376f330ae3c)
+![image](https://github.com/Hector-Lopes/NodeAPI_RestFull/assets/83184681/a19f952d-76ab-4a84-a48b-faee0368a059)
+
 
 
 
@@ -27,28 +29,29 @@ content-type: application/json
  
 { 
     "name":"",
-    "price":""
+    "price":
 }
 
 ###
 GET http://localhost:3333/products
 
-### Use ID after /
+### Passar ID depois da /
 
-GET http://localhost:3333/products/4c690378-a084-4e5b-a8fd-b6dc5fa083e1
+GET http://localhost:3333/products/
 
-### Use ID after /
-PUT  http://localhost:3333/products/9
+### Passar ID depois da /
+PUT  http://localhost:3333/products/
 
 content-type: application/json
 
 {
     "name":"",
-    "price":""
+    "price":
 }
 
-### Use ID after /
+### Passar ID depois da /
 
-DELETE http://localhost:3333/products/7
+DELETE http://localhost:3333/products/
+
 ```
 
