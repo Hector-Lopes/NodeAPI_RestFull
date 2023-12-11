@@ -7,6 +7,7 @@ import Select_Products from "../services/Select_Products.js";
 import Post_Products from "../services/Post_Products.js";
 import Update_Products from "../services/Update_Pruducts.js";
 import Delete_Product from "../services/Delete_Products.js";
+import Select_Product from "../services/SelectOne_Product.js";
 
 const ProductRouter = Router();
 
@@ -17,6 +18,12 @@ let Products = [];
 
 ProductRouter.get("/", async (request, response) => {
   const resultsql = await Select_Products();
+  return response.json(resultsql);
+});
+
+ProductRouter.get("/:id", async (request, response) => {
+  const { id } = request.params;
+  const resultsql = await Select_Product(id);
   return response.json(resultsql);
 });
 
@@ -41,7 +48,11 @@ ProductRouter.put("/:id", async (request, response) => {
     price: price,
   };
 
+  console.log(Product);
+
   const resultsqlput = await Update_Products(Product);
+
+  return response.json(resultsqlput);
 });
 
 ProductRouter.delete("/:id", async (request, response) => {
