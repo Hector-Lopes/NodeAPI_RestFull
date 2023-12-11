@@ -6,12 +6,27 @@
     <title>Document</title>
     <script async type="text/javascript" src="../js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <div class="menu">
+      <button onclick="CatchValue()">TODOS OS VALORES</button>
+
       <input class="input_name" type="text" placeholder="Nome do produto" />
       <input class="input_price" type="text" placeholder="Preço do produto" />
       <button onclick="PostValue()">POSTAR</button>
+      <input
+        class="input_name_updt"
+        type="text"
+        placeholder="Nome do produto"
+      />
+      <input
+        class="input_price_updt"
+        type="text"
+        placeholder="Preço do produto"
+      />
+      <input class="input_id_updt" type="text" placeholder="ID do produto" />
+      <button onclick="PutValue()">POSTAR</button>
     </div>
   </body>
 </html>
