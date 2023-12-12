@@ -76,3 +76,23 @@ PutValue = async () => {
     },
   });
 };
+
+DeleteValue = async () => {
+  const id = $(".input_id_del").val();
+
+  $.ajax({
+    type: "DELETE",
+    url: "http://localhost:3333/products/" + id,
+    cache: false,
+    success: (resultsql) => {
+      alert("chegou");
+      if (resultsql) {
+        alert("deletado com sucesso");
+      } else {
+        alert("Erro ao deletar");
+      }
+
+      console.log(resultsql);
+    },
+  });
+};
