@@ -59,6 +59,8 @@ ProductRouter.delete("/:id", async (request, response) => {
   const { id } = request.params;
 
   const resultsqldelete = await Delete_Product(id);
+
+  return response.json(resultsqldelete);
 });
 
 export default ProductRouter;
