@@ -1,6 +1,6 @@
 import { Router, request, response } from "express";
 import { randomUUID } from "crypto";
-
+import jwt from "jsonwebtoken";
 import bodyParser from "body-parser";
 
 import Select_Products from "../services/Select_Products.js";
@@ -13,8 +13,6 @@ const ProductRouter = Router();
 
 ProductRouter.use(bodyParser.json());
 ProductRouter.use(bodyParser.urlencoded({ extended: false }));
-
-let Products = [];
 
 ProductRouter.get("/", async (request, response) => {
   const resultsql = await Select_Products();
