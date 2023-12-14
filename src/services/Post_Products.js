@@ -8,7 +8,6 @@ const Post_Products = async ({ name, price }) => {
   `;
   const rowcount = result.length;
 
-  console.log(rowcount);
   return rowcount;
 };
 

@@ -5,7 +5,6 @@ const Select_Products = async () => {
   select * from products
 
     `;
-  console.log(result);
   return result;
 };
 

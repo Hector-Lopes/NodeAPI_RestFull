@@ -6,7 +6,6 @@ delete from products where id=${id}
 returning id
 `;
   const rowcount = result.length;
-  console.log(rowcount);
   return rowcount;
 };
 
