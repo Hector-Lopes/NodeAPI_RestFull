@@ -1,3 +1,7 @@
+funcao = () => {
+  Teeste();
+};
+
 CatchValue = async () => {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -41,10 +45,6 @@ PostValue = () => {
         alert("Falha ao Inserir ");
       }
     },
-
-    error: (resultsql) => {
-      console.log("erro");
-    },
   });
 };
 
@@ -62,9 +62,6 @@ PutValue = async () => {
 
   // const { name, price } = Product[0];
 
-  console.log(name);
-  console.log(price);
-
   $.ajax({
     type: "PUT",
     url: "http://localhost:3333/products/" + id,
@@ -72,7 +69,6 @@ PutValue = async () => {
     cache: false,
     success: (resultsql) => {
       alert("atualizado com sucesso");
-      console.log(resultsql);
     },
   });
 };
@@ -91,8 +87,6 @@ DeleteValue = async () => {
       } else {
         alert("Erro ao deletar");
       }
-
-      console.log(resultsql);
     },
   });
 };
