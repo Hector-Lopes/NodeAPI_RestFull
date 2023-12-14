@@ -3,3 +3,7 @@
     flex-direction: column;
     align-items: start;
 }
+
+input {
+    padding: 10px;
+}
