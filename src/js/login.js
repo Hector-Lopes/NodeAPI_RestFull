@@ -9,12 +9,24 @@ Login = async () => {
       data: {},
       cache: false,
       complete: (resultsql) => {
-        console.log(resultsql);
+        const { userr, namee, id } = resultsql.responseJSON;
+
+        if ((resultsql = !0)) {
+          alert(`Seja bem vindo ${namee}`);
+          Logar();
+        } else {
+          alert("falha ao logar");
+        }
       },
     });
   });
 };
 
-// export const Teeste = () => {
-//   alert("exportando");
-// };
+function Teeste() {
+  alert("exportando");
+}
+
+Logar = () => {
+  //   $("#container-export").load("../html/main.html");
+  window.location.href = "main.html";
+};
