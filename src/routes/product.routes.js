@@ -46,8 +46,6 @@ ProductRouter.put("/:id", async (request, response) => {
     price: price,
   };
 
-  console.log(Product);
-
   const resultsqlput = await Update_Products(Product);
 
   return response.json(resultsqlput);

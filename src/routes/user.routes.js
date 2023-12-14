@@ -16,7 +16,6 @@ UserRouter.get("/", async (request, response) => {
 
   const result = await Login_User(User);
 
-  console.log(result);
   return response.json(result);
 });
 
