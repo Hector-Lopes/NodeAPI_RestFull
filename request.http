@@ -28,4 +28,4 @@ DELETE http://localhost:3333/products/
   
 ####
 GET http://localhost:3333/user/LIST 
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAyOTI4MDM4LCJleHAiOjE3MDI5MjgzMzh9.7APllFwJekuChBJEPEE-he8E8sVGKpPFHeZWOHzD-y8
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAzMDA1NTE0LCJleHAiOjE3MDMwMDU4MTR9.AbM-OXSHvVZwwASoQl2hoFTbpvKB1DFWg3nWrL71Wbo
