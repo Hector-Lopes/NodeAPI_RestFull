@@ -8,25 +8,24 @@ Login = async () => {
       url: `http://localhost:3333/user/?user=${user}&password=${password}`,
       data: {},
       cache: false,
-      complete: (resultsql) => {
-        const { userr, namee, id } = resultsql.responseJSON;
-
-        if ((resultsql = !0)) {
+      success: (resultsql) => {
+        const { token, userr, namee, id } = resultsql;
+        localStorage.setItem("token", token);
+        alert(token);
+        if (id && userr) {
           alert(`Seja bem vindo ${namee}`);
           Logar();
+          resolve();
         } else {
           alert("falha ao logar");
+          reject();
         }
       },
     });
   });
 };
 
-function Teeste() {
-  alert("exportando");
-}
-
 Logar = () => {
-  //   $("#container-export").load("../html/main.html");
+  $("#container-export").load("../html/main.html");
   window.location.href = "main.html";
 };

@@ -1,22 +1,36 @@
 import { Router, request, response } from "express";
 import jwt from "jsonwebtoken";
 import bodyParser from "body-parser";
+import verifyJWT from "../middleware/verifyJWT.js";
 
 import Login_User from "../services/Login_User.js";
 
 const UserRouter = Router();
+const SECRET = "admfree";
 
 UserRouter.use(bodyParser.json());
 UserRouter.use(bodyParser.urlencoded({ extended: false }));
 
 UserRouter.get("/", async (request, response) => {
   const { user, password } = request.query;
-
   const User = { user: user, password: password };
 
   const result = await Login_User(User);
+  const { userr, namee, id } = result;
 
-  return response.json(result);
+  if (result !== 0) {
+    const token = jwt.sign({ id }, SECRET, { expiresIn: 300 });
+    const Payload = { auth: true, token, userr, namee, id };
+    console.log(Payload);
+    return response.json(Payload);
+  } else {
+    return response.json(result);
+  }
+});
+
+UserRouter.get("/LIST", verifyJWT, async (request, response) => {
+  console.log();
+  return response.json(request.id);
 });
 
 export default UserRouter;
