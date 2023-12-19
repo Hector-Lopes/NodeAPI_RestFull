@@ -8,13 +8,14 @@ import Post_Products from "../services/Post_Products.js";
 import Update_Products from "../services/Update_Pruducts.js";
 import Delete_Product from "../services/Delete_Products.js";
 import Select_Product from "../services/SelectOne_Product.js";
+import verifyJWT from "../middleware/verifyJWT.js";
 
 const ProductRouter = Router();
 
 ProductRouter.use(bodyParser.json());
 ProductRouter.use(bodyParser.urlencoded({ extended: false }));
 
-ProductRouter.get("/", async (request, response) => {
+ProductRouter.get("/", verifyJWT, async (request, response) => {
   const resultsql = await Select_Products();
   return response.json(resultsql);
 });

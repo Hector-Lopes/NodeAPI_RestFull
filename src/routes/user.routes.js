@@ -1,12 +1,11 @@
 import { Router, request, response } from "express";
 import jwt from "jsonwebtoken";
 import bodyParser from "body-parser";
-import verifyJWT from "../middleware/verifyJWT.js";
 
+import verifyJWT from "../middleware/verifyJWT.js";
 import Login_User from "../services/Login_User.js";
 
 const UserRouter = Router();
-const SECRET = "admfree";
 
 UserRouter.use(bodyParser.json());
 UserRouter.use(bodyParser.urlencoded({ extended: false }));
