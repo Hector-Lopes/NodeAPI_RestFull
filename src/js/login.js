@@ -10,8 +10,8 @@ Login = async () => {
       cache: false,
       success: (resultsql) => {
         const { token, userr, namee, id } = resultsql;
-        localStorage.setItem("token", token);
-        alert(token);
+        localStorage.setItem("tokenn", token);
+        // alert(tokennn);
         if (id && userr) {
           alert(`Seja bem vindo ${namee}`);
           Logar();
