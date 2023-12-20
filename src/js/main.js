@@ -90,3 +90,22 @@ DeleteValue = async () => {
     },
   });
 };
+
+Listar_Users = () => {
+  const token = localStorage.getItem("tokenn");
+
+  console.log(token);
+
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3333/user/LIST",
+    data: {},
+    cache: false,
+    headers: {
+      // "Content-Type": "application/json", // Exemplo de header
+      // Authorization: token, // Exemplo de header de autorização
+      "x-access-token": token,
+    },
+    success: () => {},
+  });
+};
