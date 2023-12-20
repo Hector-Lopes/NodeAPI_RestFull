@@ -12,6 +12,8 @@ import verifyJWT from "../middleware/verifyJWT.js";
 
 const ProductRouter = Router();
 
+const SECRET = "admfree";
+
 ProductRouter.use(bodyParser.json());
 ProductRouter.use(bodyParser.urlencoded({ extended: false }));
 
