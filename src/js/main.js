@@ -106,6 +106,11 @@ Listar_Users = () => {
       // Authorization: token, // Exemplo de header de autorização
       "x-access-token": token,
     },
-    success: () => {},
+    success: () => {
+      alert("Tudo ok");
+    },
+    error: () => {
+      alert("Token expirou");
+    },
   });
 };
