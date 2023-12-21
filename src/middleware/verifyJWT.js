@@ -6,7 +6,6 @@ dotenv.config();
 const { SECRET_JWT } = process.env;
 
 export default function verifyJWT(request, response, next) {
-  const SECRET = "admfree";
   const token = request.headers["x-access-token"];
   jwt.verify(token, SECRET_JWT, (err, decoded) => {
     if (err) {
