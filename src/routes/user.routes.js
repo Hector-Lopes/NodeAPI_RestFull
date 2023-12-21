@@ -4,7 +4,12 @@ import bodyParser from "body-parser";
 
 import verifyJWT from "../middleware/verifyJWT.js";
 import Login_User from "../services/Login_User.js";
+import Select_Users from "../services/Select_Users.js";
+import dotenv from "dotenv";
 
+dotenv.config();
+
+const { SECRET_JWT } = process.env;
 const UserRouter = Router();
 
 UserRouter.use(bodyParser.json());
@@ -18,7 +23,7 @@ UserRouter.get("/", async (request, response) => {
   const { userr, namee, id } = result;
 
   if (result !== 0) {
-    const token = jwt.sign({ id }, SECRET, { expiresIn: 300 });
+    const token = jwt.sign({ id }, SECRET_JWT, { expiresIn: 300 });
     const Payload = { auth: true, token, userr, namee, id };
     console.log(Payload);
     return response.json(Payload);
@@ -28,8 +33,10 @@ UserRouter.get("/", async (request, response) => {
 });
 
 UserRouter.get("/LIST", verifyJWT, async (request, response) => {
-  console.log();
-  return response.json(request.id);
+  console.log("a");
+  const result = await Select_Users();
+  console.log(result);
+  return response.json(result);
 });
 
 export default UserRouter;
